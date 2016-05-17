@@ -1,0 +1,15 @@
+
+//required：一个格式良好的消息一定要含有1个这种字段。表示该值是必须要设置的。
+//optional：消息格式中该字段可以有0个或1个值（不超过1个）。
+//repeated：在一个格式良好的消息中，这种字段可以重复任意多次（包括0次）。
+//			重复的值的顺序会被保留。表示该值可以重复，相当于java中list。
+
+package ailk;
+message KafkaMsg_pb
+{
+    //##接受kafka 消息队列的最后一条话单的偏移
+    required  uint64 lPosition = 1;
+    required  bytes  bBillingMsgPb=2;
+    required  uint64 lBillingMsgLen=3;
+};
+
